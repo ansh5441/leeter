@@ -6,15 +6,6 @@ type mapKey struct {
 
 func change(amount int, coins []int) int {
 	mapOfHelp := make(map[mapKey]int)
-	// sort coins in decreasing order
-	for i := 0; i < len(coins); i++ {
-		for j := i; j < len(coins); j++ {
-			if coins[j] > coins[i] {
-				coins[i], coins[j] = coins[j], coins[i]
-			}
-		}
-	}
-
 	return changeHelp(amount, coins, 0, &mapOfHelp)
 }
 
