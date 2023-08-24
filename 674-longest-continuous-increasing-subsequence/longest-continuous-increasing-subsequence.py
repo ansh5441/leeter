@@ -1,5 +1,5 @@
 class Solution:
-    def lcisHelper(self, nums: List[int] ) -> int:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return 0
         numInc = 1
@@ -9,8 +9,5 @@ class Solution:
             currMax = nums[currIndex]
             currIndex += 1
             numInc += 1
-        return max(numInc, self.lcisHelper(nums[currIndex:]))
-
-    def findLengthOfLCIS(self, nums: List[int]) -> int:
-        return self.lcisHelper(nums)
+        return max(numInc, self.findLengthOfLCIS(nums[currIndex:]))
 
