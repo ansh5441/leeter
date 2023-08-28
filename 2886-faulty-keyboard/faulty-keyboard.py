@@ -12,8 +12,5 @@ class Solution:
                 else:
                     new_arr.append(s[j])
             j += 1
-        st = ""
-        for ch in new_arr:
-            st += ch
-        return st
+        return "".join(new_arr)
             
