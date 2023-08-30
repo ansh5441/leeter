@@ -5,20 +5,18 @@ class Solution:
       n = len(larger)
       m = len(smaller)
       carry = 0
-      res_rev = []
+      res = ""
       for i in range(n-1,-1,-1):
         total = 0
         small_index = i + m - n
         if small_index >= 0:
           total += int(smaller[small_index])
         total += carry + int(larger[i])
-
-        res_rev.append(total % 2)
+        
+        res = str(total % 2) + res
         carry = int(total / 2)
       if carry > 0:
-        res_rev.append(carry)
-      res_rev.reverse()
-      res = "".join([str(s) for s in res_rev])
+        res = str(carry) + res
       return res
 
 
